@@ -1,0 +1,15 @@
+body{
+    background-color:#939291;
+    margin: 0;
+}
+
+header{
+    background-color: #2F4F7F;
+    color: #FFFFFF;
+    display: flex;
+}
+
+.navega{
+    display: flex;
+    align-items: center;
+}
