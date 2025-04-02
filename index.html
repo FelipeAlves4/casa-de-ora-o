@@ -5,27 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Casa de Oração</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Casa de Oração - Marília</title>
 </head>
 
 <body>
     <header id="home" class="home">
         <h1>Casa de Oração</h1>
         <nav class="navega">
-            <a href="#home">Inicio</a>
+            <a href="#home">Início</a>
             <a href="#sobre">Sobre</a>
+            <a href="#horarios">Horários</a>
             <a href="#galeria">Galeria</a>
             <a href="#localiza">Localização</a>
             <a href="#contatos">Contatos</a>
         </nav>
     </header>
+
     <main>
         <section id="inicio" class="inicio">
             <div>
                 <h1>Casa de Oração</h1>
-                <p>Um lugar de paz,fé e comunhão</p>
-                <button>Conheça a nossa igreja</button>
+                <p>Um lugar de paz, fé e comunhão</p>
+                <button onclick="window.location.href='#sobre'">Conheça a nossa igreja</button>
             </div>
         </section>
 
@@ -33,90 +35,111 @@
             <h2>Nossa Missão</h2>
             <div class="info-card">
                 <h3>Amar</h3>
-                <p>Amar a Deus sobre todas as coisas e ao próximo como a nós mesmos.</p>
+                <p>Amar a Deus sobre todas as coisas e ao próximo como a nós mesmos. Vivemos o amor de Cristo em todas as nossas ações e relacionamentos.</p>
             </div>
             <div class="info-card">
                 <h3>Servir</h3>
-                <p>Servir à comunidade com humildade e dedicação, levando esperança.</p>
+                <p>Servir à comunidade com humildade e dedicação, levando esperança e transformação através do amor de Cristo.</p>
             </div>
             <div class="info-card">
                 <h3>Ensinar</h3>
-                <p>Ensinar a palavra de Deus com fidelidade e amor pela verdade.</p>
+                <p>Ensinar a palavra de Deus com fidelidade e amor pela verdade, formando discípulos comprometidos com o evangelho.</p>
             </div>
         </section>
 
-        <section class="horarios">
+        <section class="horarios" id="horarios">
             <div class="container">
                 <h2>Horários dos Cultos</h2>
                 <div class="horarios-card">
                     <h3>Domingo</h3>
-                    <p>Primeiro culto as 10:30 à 12:00
-                        Segundo culto as 19:30 à 21:00</p>
-                    </p>
+                    <p>Primeiro culto: 10:30 às 12:00</p>
+                    <p>Segundo culto: 19:30 às 21:00</p>
                 </div>
-                <div>
-                    <h3>Quinta</h3>
-                    <p>Culto as 19:30 à 21:00</p>
+                <div class="horarios-card">
+                    <h3>Quinta-feira</h3>
+                    <p>Culto de Oração: 19:30 às 21:00</p>
                 </div>
-                <div>
-                    <h3>Escola Bibilica</h3>
-                    <p>Sabado as 15:30 à 17:00</p>
+                <div class="horarios-card">
+                    <h3>Escola Bíblica</h3>
+                    <p>Sábado: 15:30 às 17:00</p>
                 </div>
             </div>
         </section>
 
         <section id="galeria" class="galeria">
-            <h2>Nossa comunidade</h2>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <h2>Nossa Comunidade</h2>
+            <div class="galeria-grid">
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1438032005730-c779502df39b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Culto">
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Oração">
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d4cd7e48?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Comunhão">
+                </div>
+            </div>
         </section>
 
-        <section>
+        <section id="localiza" class="localizacao">
             <h2>Nossa Localização</h2>
+            <div class="mapa-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.197577494978!2d-49.9540849!3d-22.2177779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDEzJzA0LjAiUyA0OcKwNTcnMTQuNyJX!5e0!3m2!1spt-BR!2sbr!4v1625767890123!5m2!1spt-BR!2sbr"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
         </section>
 
-        <footer>
+        <footer id="contatos">
             <h2>Casa de Oração</h2>
             <div class="footer-grid">
                 <div class="footer-column">
                     <h4>Sobre Nós</h4>
-                    <p>Uma igreja comprometida com a palavra de Deus e com a transformação de vidas através do evangelho
-                        de Jesus Cristo.</p>
+                    <p>Uma igreja comprometida com a palavra de Deus e com a transformação de vidas através do evangelho de Jesus Cristo.</p>
                 </div>
 
                 <div class="footer-column">
                     <h4>Links Rápidos</h4>
                     <p><a href="#inicio">Início</a></p>
                     <p><a href="#sobre">Sobre</a></p>
+                    <p><a href="#horarios">Horários</a></p>
                     <p><a href="#galeria">Galeria</a></p>
                     <p><a href="#localiza">Localização</a></p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contato</h4>
+                    <p>Endereço: Rua Exemplo, 123</p>
+                    <p>Telefone: (14) 1234-5678</p>
+                    <p>Email: contato@casadeoracao.com</p>
                 </div>
 
                 <div class="footer-column">
                     <h4>Redes Sociais</h4>
                     <p>Siga-nos nas redes sociais</p>
                     <div class="social-icons">
-                        <p>Instagram da Igreja: <a href="https://www.instagram.com/casadeoracaomariliasp/"
-                                target="_blank">
-                                <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg"
-                                    width="30" height="30" alt="Instagram logo" />
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <p>Desenvolvido por: <a href="https://www.instagram.com/felipe_alvesrodri/" target="_blank">
+                        <a href="https://www.instagram.com/casadeoracaomariliasp/" target="_blank">
                             <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg"
                                 width="30" height="30" alt="Instagram logo" />
                         </a>
-                    </p>
+                        <a href="https://www.facebook.com/casadeoracao" target="_blank">
+                            <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/facebook/default.svg"
+                                width="30" height="30" alt="Facebook logo" />
+                        </a>
+                    </div>
                 </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Desenvolvido por: <a href="https://www.instagram.com/felipe_alvesrodri/" target="_blank">Felipe Alves</a></p>
+                <p>&copy; 2024 Casa de Oração. Todos os direitos reservados.</p>
             </div>
         </footer>
     </main>
-
 </body>
 
 </html>
