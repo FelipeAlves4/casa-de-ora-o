@@ -7,15 +7,15 @@
 }
 
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #e74c3c;
-    --accent-color: #f1c40f;
-    --text-color: #2c3e50;
-    --light-bg: #ecf0f1;
+    --primary-color: #000000;
+    --secondary-color: #1a1a1a;
+    --accent-color: #333333;
+    --text-color: #2c2c2c;
+    --light-bg: #f5f5f5;
     --white: #ffffff;
-    --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --gradient: linear-gradient(135deg, #2c3e50, #3498db);
+    --gradient: linear-gradient(135deg, #000000, #1a1a1a);
 }
 
 body {
@@ -27,20 +27,16 @@ body {
 
 /* Header */
 header {
-    background: linear-gradient(135deg, #2c3e50, #3498db);
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
     color: white;
     padding: 1.2rem 5%;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-}
-
-header:hover {
-    background: linear-gradient(135deg, #3498db, #2c3e50);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
@@ -51,24 +47,6 @@ header h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     position: relative;
     display: inline-block;
-}
-
-header h1::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: #f1c40f;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.4s ease;
-}
-
-header:hover h1::after {
-    transform: scaleX(1);
-    transform-origin: left;
 }
 
 .navega {
@@ -89,27 +67,19 @@ header:hover h1::after {
     letter-spacing: 1px;
 }
 
-.navega a::before {
+.navega a::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 2px;
-    background: #f1c40f;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.4s ease;
+    background: var(--white);
+    transition: width 0.3s ease;
 }
 
-.navega a:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-.navega a:hover {
-    color: #f1c40f;
-    transform: translateY(-2px);
+.navega a:hover::after {
+    width: 100%;
 }
 
 /* Seção Início */
@@ -126,23 +96,6 @@ header:hover h1::after {
     color: var(--white);
     padding: 0 1rem;
     position: relative;
-}
-
-.inicio::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(44, 62, 80, 0.8), rgba(52, 152, 219, 0.8));
-    z-index: 1;
-}
-
-.inicio > div {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
 }
 
 .inicio h1 {
@@ -167,7 +120,8 @@ header:hover h1::after {
 .inicio button {
     padding: 1.5rem 3rem;
     font-size: 1.3rem;
-    background: var(--accent-color);
+    background: var(--white);
+    color: var(--primary-color);
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -178,13 +132,13 @@ header:hover h1::after {
     animation: fadeInUp 1s ease 0.4s;
     opacity: 0;
     animation-fill-mode: forwards;
-    box-shadow: 0 5px 15px rgba(241, 196, 15, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .inicio button:hover {
-    background: #f39c12;
+    background: var(--light-bg);
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(241, 196, 15, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 /* Seção Informações */
@@ -192,17 +146,6 @@ header:hover h1::after {
     padding: 10rem 5%;
     background-color: var(--white);
     position: relative;
-}
-
-.informacoes::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .informacoes h2 {
@@ -214,18 +157,6 @@ header:hover h1::after {
     padding-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-}
-
-.informacoes h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    height: 4px;
-    background: var(--accent-color);
-    border-radius: 2px;
 }
 
 .info-card {
@@ -247,7 +178,7 @@ header:hover h1::after {
     left: 0;
     width: 100%;
     height: 5px;
-    background: var(--accent-color);
+    background: var(--primary-color);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s ease;
@@ -262,25 +193,6 @@ header:hover h1::after {
     transform: scaleX(1);
 }
 
-.info-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    position: relative;
-    padding-bottom: 1rem;
-}
-
-.info-card h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background: var(--secondary-color);
-    border-radius: 2px;
-}
-
 /* Seção Horários */
 .horarios {
     background: var(--gradient);
@@ -288,17 +200,6 @@ header:hover h1::after {
     padding: 10rem 5%;
     position: relative;
     overflow: hidden;
-}
-
-.horarios::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.05)"/></svg>');
-    opacity: 0.1;
 }
 
 .horarios h2 {
@@ -309,18 +210,6 @@ header:hover h1::after {
     padding-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-}
-
-.horarios h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    height: 4px;
-    background: var(--accent-color);
-    border-radius: 2px;
 }
 
 .horarios-card {
@@ -335,25 +224,9 @@ header:hover h1::after {
     overflow: hidden;
 }
 
-.horarios-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
-}
-
 .horarios-card:hover {
     transform: translateY(-10px);
     background-color: rgba(255, 255, 255, 0.15);
-}
-
-.horarios-card:hover::before {
-    transform: translateX(100%);
 }
 
 /* Galeria */
@@ -374,18 +247,6 @@ header:hover h1::after {
     letter-spacing: 2px;
 }
 
-.galeria h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    height: 4px;
-    background: var(--accent-color);
-    border-radius: 2px;
-}
-
 .galeria-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -402,25 +263,8 @@ header:hover h1::after {
     aspect-ratio: 4/3;
 }
 
-.galeria-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
-    opacity: 0;
-    transition: var(--transition);
-    z-index: 1;
-}
-
 .galeria-item:hover {
     transform: translateY(-15px) scale(1.02);
-}
-
-.galeria-item:hover::before {
-    opacity: 1;
 }
 
 .galeria-item img {
@@ -452,18 +296,6 @@ header:hover h1::after {
     letter-spacing: 2px;
 }
 
-.localizacao h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    height: 4px;
-    background: var(--accent-color);
-    border-radius: 2px;
-}
-
 .mapa-container {
     width: 100%;
     max-width: 1200px;
@@ -472,19 +304,6 @@ header:hover h1::after {
     overflow: hidden;
     box-shadow: var(--shadow);
     position: relative;
-}
-
-.mapa-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--accent-color);
-    border-radius: 20px;
-    z-index: 1;
-    pointer-events: none;
 }
 
 /* Footer */
@@ -496,22 +315,11 @@ footer {
     overflow: hidden;
 }
 
-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(to bottom right, var(--secondary-color), var(--primary-color));
-    clip-path: polygon(0 0, 100% 100%, 100% 100%, 0 100%);
-}
-
 footer h2 {
     text-align: center;
     margin-bottom: 4rem;
     font-size: 3rem;
-    color: var(--accent-color);
+    color: var(--white);
     position: relative;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -526,24 +334,13 @@ footer h2 {
 }
 
 .footer-column h4 {
-    color: var(--accent-color);
+    color: var(--white);
     margin-bottom: 2rem;
     font-size: 1.5rem;
     position: relative;
     padding-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-}
-
-.footer-column h4::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background: var(--secondary-color);
-    border-radius: 2px;
 }
 
 .footer-column a {
@@ -557,21 +354,8 @@ footer h2 {
 }
 
 .footer-column a:hover {
-    color: var(--accent-color);
+    color: var(--light-bg);
     transform: translateX(10px);
-}
-
-.footer-column a::before {
-    content: '→';
-    position: absolute;
-    left: -20px;
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.footer-column a:hover::before {
-    opacity: 1;
-    left: 0;
 }
 
 .social-icons {
@@ -589,23 +373,7 @@ footer h2 {
 
 .social-icons img:hover {
     transform: translateY(-5px) scale(1.1);
-    filter: brightness(0) invert(0.8) sepia(1) saturate(1000%) hue-rotate(0deg);
-}
-
-/* Footer Bottom */
-.footer-bottom {
-    text-align: center;
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    z-index: 1;
-}
-
-.footer-bottom p {
-    margin: 1rem 0;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.1rem;
+    filter: brightness(0) invert(0.8);
 }
 
 /* Animações */
@@ -620,42 +388,51 @@ footer h2 {
     }
 }
 
-/* Estilos para o botão do WhatsApp */
+/* Botão do WhatsApp */
 .whatsapp-button {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
     color: white;
-    padding: 15px;
+    padding: 15px 25px;
     border-radius: 50px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     text-decoration: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
 }
 
-.whatsapp-button:hover {
-    transform: scale(1.05);
+.whatsapp-button img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
 }
 
 .whatsapp-button span {
-    font-weight: 500;
+    transition: transform 0.3s ease;
 }
 
-/* Animações para elementos ao rolar */
-.info-card, .horarios-card, .galeria-item {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+.whatsapp-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    background: #128C7E;
 }
 
-.info-card.visivel, .horarios-card.visivel, .galeria-item.visivel {
-    opacity: 1;
-    transform: translateY(0);
+.whatsapp-button:hover img {
+    transform: rotate(15deg);
+}
+
+.whatsapp-button:hover span {
+    transform: translateX(5px);
 }
 
 /* Responsividade */
@@ -708,12 +485,14 @@ footer h2 {
     }
 
     .whatsapp-button {
-        bottom: 15px;
-        right: 15px;
-        padding: 12px;
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 0.8rem;
     }
-    
-    .whatsapp-button span {
-        display: none;
+
+    .whatsapp-button img {
+        width: 20px;
+        height: 20px;
     }
 }
