@@ -607,7 +607,8 @@ ul {
     }
 
     .btn {
-        width: 100%;
+        width: 90%;
+        height: 45px;
         justify-content: center;
     }
 
@@ -624,8 +625,9 @@ ul {
     }
 
     .inicio button {
-        width: 100%;
+        width: 90%;
         padding: 1rem;
+        font-size: 1.1rem;
     }
 }
 
@@ -640,6 +642,16 @@ ul {
 
     header {
         padding: 1rem 2%;
+    }
+
+    .btn {
+        font-size: 16px;
+        height: 40px;
+    }
+
+    .inicio button {
+        padding: 0.8rem;
+        font-size: 1rem;
     }
 }
 
