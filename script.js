@@ -1,7 +1,7 @@
 // Função para animar elementos ao rolar a página
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const elementos = document.querySelectorAll('.info-card, .horarios-card, .galeria-item');
-    
+
     function verificarVisibilidade() {
         elementos.forEach(elemento => {
             const posicao = elemento.getBoundingClientRect();
@@ -53,7 +53,7 @@ function headerResponsivo() {
 
     window.addEventListener('scroll', () => {
         const posicaoAtual = window.scrollY;
-        
+
         // Esconde o header ao rolar para baixo
         if (posicaoAtual > ultimaPosicaoScroll && posicaoAtual > 100) {
             header.style.transform = 'translateY(-100%)';
@@ -72,5 +72,23 @@ function headerResponsivo() {
     });
 }
 
+const toggleBtn = document.getElementById('menuToggle');
+const overlay = document.getElementById('menuOverlay');
+
+toggleBtn.addEventListener('click', () => {
+    overlay.classList.toggle('show');
+});
+
+
+// Fecha o menu ao clicar em um link
+document.querySelectorAll('.overlay-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        overlay.classList.remove('show');
+    });
+});
+
+
+
 // Inicializar funções do header
-headerResponsivo(); 
+headerResponsivo();
+

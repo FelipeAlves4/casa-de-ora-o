@@ -32,6 +32,7 @@ header {
     color: white;
     padding: 1.2rem 5%;
     position: fixed;
+    display: flex;
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -49,37 +50,107 @@ header h1 {
     display: inline-block;
 }
 
-.navega {
+.home {
     display: flex;
-    gap: 3rem;
+    justify-content: space-between;
     align-items: center;
+    padding: 20px;
 }
 
-.navega a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    position: relative;
-    padding: 0.5rem 0;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+/* botão */
+.btn {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    background: #040f16;
+    color: #f5f5f5;
+    cursor: pointer;
 }
 
-.navega a::after {
-    content: '';
+.btn:hover {
+    box-shadow: 0 0 20px 0px #2e2e2e3a;
+}
+
+.btn .icon {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--white);
-    transition: width 0.3s ease;
+    height: 40px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
 }
 
-.navega a:hover::after {
-    width: 100%;
+.btn .text {
+    transform: translateX(55px);
+}
+
+.btn:hover .icon {
+    width: 175px;
+}
+
+.btn:hover .text {
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:active .icon {
+    transform: scale(0.85);
+}
+
+/* menu navegação */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(4, 15, 22, 0.97);
+    display: none;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    align-items: center;
+    z-index: 9999;
+    /* aumenta mais ainda só por garantia */
+}
+
+.menu-overlay.show {
+    display: flex;
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+.overlay-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.overlay-nav a {
+    color: #00aaff;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.overlay-nav a:hover {
+    color: #ffffff;
 }
 
 /* Seção Início */
@@ -358,23 +429,113 @@ footer h2 {
     transform: translateX(10px);
 }
 
-.social-icons {
+
+ul {
+    list-style: none;
+}
+
+.example-2 {
     display: flex;
-    gap: 2rem;
-    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
 }
 
-.social-icons img {
-    transition: var(--transition);
-    filter: brightness(0) invert(1);
-    width: 40px;
-    height: 40px;
+.example-2 .icon-content {
+    margin: 0 10px;
+    position: relative;
 }
 
-.social-icons img:hover {
-    transform: translateY(-5px) scale(1.1);
-    filter: brightness(0) invert(0.8);
+.example-2 .icon-content .tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    transition: all 0.3s ease;
 }
+
+.example-2 .icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -50px;
+}
+
+.example-2 .icon-content a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #4d4d4d;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.example-2 .icon-content a:hover {
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+
+.example-2 .icon-content a svg {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+}
+
+.example-2 .icon-content a:hover {
+    color: white;
+}
+
+.example-2 .icon-content a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+}
+
+.example-2 .icon-content a:hover .filled {
+    height: 100%;
+}
+
+.example-2 .icon-content a[data-social="whatsapp"] .filled,
+.example-2 .icon-content a[data-social="whatsapp"]~.tooltip {
+    background-color: #128c7e;
+}
+
+.example-2 .icon-content a[data-social="facebook"] .filled,
+.example-2 .icon-content a[data-social="facebook"]~.tooltip {
+    background-color: #3b5998;
+}
+
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"]~.tooltip {
+    background: linear-gradient(45deg,
+            #405de6,
+            #5b51db,
+            #b33ab4,
+            #c135b4,
+            #e1306c,
+            #fd1f1f);
+}
+
+.example-2 .icon-content a[data-social="youtube"] .filled,
+.example-2 .icon-content a[data-social="youtube"]~.tooltip {
+    background-color: #ff0000;
+}
+
+
 
 /* Animações */
 @keyframes fadeInUp {
@@ -382,6 +543,7 @@ footer h2 {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -518,6 +680,7 @@ footer h2 {
     font-size: 1.1rem;
     margin-bottom: 15px;
 }
+
 .sobre br {
     margin-bottom: 10px;
 }
