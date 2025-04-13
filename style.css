@@ -2,11 +2,12 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total */
     font-family: 'Roboto', sans-serif;
 }
 
 :root {
+    /* Variáveis de cores e efeitos para reutilização */
     --primary-color: #000000;
     --secondary-color: #1a1a1a;
     --accent-color: #333333;
@@ -19,32 +20,32 @@
 }
 
 body {
-    background-color: var(--light-bg);
-    color: var(--text-color);
-    line-height: 1.6;
-    overflow-x: hidden;
+    background-color: var(--light-bg); /* Fundo claro */
+    color: var(--text-color);          /* Cor padrão do texto */
+    line-height: 1.6;                  /* Altura da linha */
+    overflow-x: hidden;                /* Evita rolagem horizontal */
 }
 
 /* Header */
 header {
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.95);  /* Fundo semi-transparente */
+    backdrop-filter: blur(10px);     /* Efeito de desfoque no fundo */
     color: white;
-    padding: 1.2rem 5%;
-    position: fixed;
+    padding: 1.2rem 5%;              /* Espaçamento interno */
+    position: fixed;                 /* Fixa no topo da página */
     display: flex;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 1000;                   /* Fica acima de outros elementos */
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease;       /* Suaviza transições */
 }
 
 header h1 {
     font-size: 2.4rem;
     margin-bottom: 1.2rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 3px;             /* Espaçamento entre letras */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     position: relative;
     display: inline-block;
@@ -57,7 +58,7 @@ header h1 {
     padding: 20px;
 }
 
-/* botão */
+/* Botão estilizado */
 .btn {
     width: 150px;
     height: 50px;
@@ -69,13 +70,13 @@ header h1 {
     font-weight: 600;
     display: flex;
     align-items: center;
-    background: #040f16;
-    color: #f5f5f5;
+    background: #040f16;             /* Fundo escuro */
+    color: #f5f5f5;                  /* Texto claro */
     cursor: pointer;
 }
 
 .btn:hover {
-    box-shadow: 0 0 20px 0px #2e2e2e3a;
+    box-shadow: 0 0 20px 0px #2e2e2e3a; /* Sombra ao passar o mouse */
 }
 
 .btn .icon {
@@ -85,20 +86,20 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.5s;
+    transition: all 0.5s;            /* Suaviza transformação do ícone */
 }
 
 .btn .text {
-    transform: translateX(55px);
+    transform: translateX(55px);     /* Desloca o texto para a direita */
 }
 
 .btn:hover .icon {
-    width: 175px;
+    width: 175px;                    /* Aumenta área do ícone no hover */
 }
 
 .btn:hover .text {
     transition: all 0.5s;
-    opacity: 0;
+    opacity: 0;                      /* Esconde o texto ao passar o mouse */
 }
 
 .btn:focus {
@@ -106,33 +107,31 @@ header h1 {
 }
 
 .btn:active .icon {
-    transform: scale(0.85);
+    transform: scale(0.85);          /* Animação ao clicar no botão */
 }
 
-/* menu navegação */
+/* Menu de navegação em overlay */
 .menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(4, 15, 22, 0.97);
-    display: none;
+    background-color: rgba(4, 15, 22, 0.97); /* Cor escura com opacidade */
+    display: none;                         /* Oculto por padrão */
     justify-content: center;
     transition: opacity 0.3s ease;
     opacity: 0;
-    pointer-events: none;
+    pointer-events: none;                  /* Impede cliques quando oculto */
     align-items: center;
-    z-index: 9999;
-    /* aumenta mais ainda só por garantia */
+    z-index: 9999;                         /* Acima de quase tudo */
 }
 
 .menu-overlay.show {
-    display: flex;
+    display: flex;                        /* Exibe o menu */
     opacity: 1;
     pointer-events: all;
 }
-
 
 .overlay-nav {
     display: flex;
@@ -153,7 +152,7 @@ header h1 {
     color: #ffffff;
 }
 
-/* Seção Início */
+/* Seção Início - com imagem de fundo */
 .inicio {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1438032005730-c779502df39b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
@@ -184,7 +183,7 @@ header h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     animation: fadeInUp 1s ease 0.2s;
     opacity: 0;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards; /* Faz a animação permanecer ao final */
     font-weight: 300;
 }
 
@@ -553,68 +552,67 @@ ul {
 /* Botão do WhatsApp */
 .whatsapp-button {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #25D366;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
     color: white;
-    padding: 15px 25px;
-    border-radius: 50px;
+    padding: 12px 16px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     text-decoration: none;
-    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 1000;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-}
-
-.whatsapp-button img {
-    width: 24px;
-    height: 24px;
-    filter: brightness(0) invert(1);
-    transition: transform 0.3s ease;
+    z-index: 9999;
+    transition: all 0.3s ease;
 }
 
 .whatsapp-button span {
     transition: transform 0.3s ease;
 }
 
+.whatsapp-button img,
+.whatsapp-button svg {
+    transition: transform 0.3s ease;
+}
+
 .whatsapp-button:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-    background: #128C7E;
-}
-
-.whatsapp-button:hover img {
-    transform: rotate(15deg);
+    background-color: #128C7E;
 }
 
 .whatsapp-button:hover span {
     transform: translateX(5px);
 }
 
-/* Responsividade */
+.whatsapp-button:hover img,
+.whatsapp-button:hover svg {
+    transform: rotate(15deg);
+}
+
+/* Media Queries para tornar o site mais responsivo */
 @media (max-width: 768px) {
-    header {
-        padding: 1rem;
-    }
-
     header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
     }
 
-    .navega {
+    .home {
         flex-direction: column;
-        gap: 1rem;
         text-align: center;
     }
 
-    .navega a {
-        font-size: 1rem;
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn .text {
+        transform: none;
     }
 
     .inicio h1 {
@@ -622,42 +620,29 @@ ul {
     }
 
     .inicio p {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
     .inicio button {
-        padding: 1.2rem 2.5rem;
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .inicio h1 {
+        font-size: 2.4rem;
+    }
+
+    .inicio p {
         font-size: 1.2rem;
     }
 
-    .informacoes h2,
-    .horarios h2,
-    .galeria h2,
-    .localizacao h2 {
-        font-size: 2.5rem;
-    }
-
-    .info-card,
-    .horarios-card {
-        padding: 2rem;
-    }
-
-    .galeria-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .whatsapp-button {
-        bottom: 20px;
-        right: 20px;
-        padding: 12px 20px;
-        font-size: 0.8rem;
-    }
-
-    .whatsapp-button img {
-        width: 20px;
-        height: 20px;
+    header {
+        padding: 1rem 2%;
     }
 }
+
 
 .sobre {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');

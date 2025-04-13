@@ -15,23 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
     verificarVisibilidade();
 });
 
-// Função para o botão do WhatsApp
-function criarBotaoWhatsApp() {
-    const botaoWhatsApp = document.createElement('a');
-    botaoWhatsApp.href = 'https://wa.me/5514991064008'; // Substitua pelo número correto
-    botaoWhatsApp.className = 'whatsapp-button';
-    botaoWhatsApp.target = '_blank';
-    botaoWhatsApp.innerHTML = `
-        <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/whatsapp/default.svg" 
-             alt="WhatsApp" width="30" height="30">
-        <span>Fale Conosco</span>
-    `;
-    document.body.appendChild(botaoWhatsApp);
-}
-
-// Inicializar o botão do WhatsApp
-criarBotaoWhatsApp();
-
 // Função para scroll suave
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
