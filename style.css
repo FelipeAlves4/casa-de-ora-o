@@ -595,6 +595,57 @@ ul {
 }
 
 /* Media Queries para tornar o site mais responsivo */
+/* Media Queries para tornar o site mais responsivo */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 2.2rem;  /* Ajustando a fonte do título no header */
+    }
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;  /* Diminui o espaçamento em telas menores */
+    }
+
+    .btn {
+        width: 80%;  /* Botões mais estreitos em telas menores */
+        height: 45px;
+        font-size: 18px;
+        justify-content: center;
+    }
+
+    .inicio h1 {
+        font-size: 3.5rem;
+    }
+
+    .inicio p {
+        font-size: 1.6rem;
+    }
+
+    .inicio button {
+        width: 80%;
+        padding: 1.2rem;
+        font-size: 1.2rem;
+    }
+
+    .informacoes {
+        padding: 5rem 2%;
+    }
+
+    .informacoes h2 {
+        font-size: 2.4rem;
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  /* Ajusta a grid para telas menores */
+        gap: 2rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));  /* Ajuste no grid do footer */
+    }
+}
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.8rem;
@@ -609,6 +660,7 @@ ul {
     .btn {
         width: 90%;
         height: 45px;
+        font-size: 16px;
         justify-content: center;
     }
 
@@ -628,6 +680,22 @@ ul {
         width: 90%;
         padding: 1rem;
         font-size: 1.1rem;
+    }
+
+    .informacoes {
+        padding: 7rem 2%;
+    }
+
+    .informacoes h2 {
+        font-size: 2.8rem;
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  /* Grid ajustado */
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));  /* Ajuste no grid do footer */
     }
 }
 
@@ -653,8 +721,26 @@ ul {
         padding: 0.8rem;
         font-size: 1rem;
     }
-}
 
+    .informacoes {
+        padding: 4rem 2%;
+    }
+
+    .informacoes h2 {
+        font-size: 2.2rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;  /* Ajuste no footer para telas bem pequenas */
+    }
+
+    .whatsapp-button {
+        bottom: 15px;  /* Ajusta a posição do botão WhatsApp */
+        right: 15px;
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+}
 
 .sobre {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
