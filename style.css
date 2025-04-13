@@ -666,6 +666,7 @@ ul {
 
     .btn .text {
         transform: none;
+        margin-left: 50px;
     }
 
     .inicio h1 {
