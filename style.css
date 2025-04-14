@@ -155,7 +155,7 @@ header h1 {
 /* Seção Início - com imagem de fundo */
 .inicio {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1438032005730-c779502df39b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/igreja.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
