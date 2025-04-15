@@ -17,8 +17,6 @@ A Casa de Oração é uma igreja local que busca conectar pessoas e compartilhar
 
 - **Informações sobre a Igreja**: Apresenta uma breve descrição da Casa de Oração e sua missão.
 - **Horários de Culto**: Displays the schedule of services and events for the community.
-- **Pedidos de Oração**: Uma seção onde os visitantes podem enviar suas solicitações.
-- **Blog/Artigos**: Um espaço para compartilhar mensagens inspiradoras e ensinamentos.
 - **Informações de Contato**: Métodos para que os visitantes possam entrar em contato com a igreja.
 
 ## Como Executar o Projeto
